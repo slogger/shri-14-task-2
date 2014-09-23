@@ -29,6 +29,9 @@
           width: 300px;
           height: 300px;
       }
+      .equalizer > span {
+          transition: height 1s linear;
+      }
     </style>
     <script>
       function setEqualizer(selector, timeout, colWidth) {
@@ -62,10 +65,10 @@
       }
 
       function run_equalizer (selector, timeout) {
-          debugger;
           var list = $(selector + ' span');
 
           list.map(function(i) {
+              // this.style.height = $(selector).height()/2;
               var colHeight = Math.round($(selector).height() * Math.random());
               this.style.height = colHeight + 'px';
           });
